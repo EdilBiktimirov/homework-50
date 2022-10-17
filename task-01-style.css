@@ -1,0 +1,26 @@
+#app {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    flex-basis: 30%;
+    border: 2px solid #eee;
+    border-radius: 5px;
+}
+
+.infoDiv{
+    padding: 10px;
+}
+
+.img {
+    display: block;
+    width: 100%;
+}
+
+.infoYear {
+    font-style: italic;
+}

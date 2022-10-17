@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="task-01-style.css">
+
+</head>
+<body>
+<div id="app"></div>
+
+<script type="text/babel">
+    const Card = props => {
+        return(
+            <div className="card">
+                <div className="infoDiv">
+                    <h3 className="title">{props.name}</h3>
+                    <p className="infoYear">Release date: {props.year}</p>
+                </div>
+                <img className="img" height="auto" alt="poster" src={props.img}></img>
+            </div>
+        );
+    };
+
+    const app = (
+        <React.Fragment>
+            <Card name="Inception" year={2010} img={"../images/inseption.jpg"}/>
+            <Card name="Prestige" year={2006} img={"../images/prestige.jpg"}/>
+            <Card name="Constantine" year={2005} img={"../images/constantine.jpg"}/>
+        </React.Fragment>
+    );
+
+    const container = document.getElementById('app');
+    ReactDOM.createRoot(container).render(app);
+</script>
+</body>
+</html>
