@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="task-02-style.css">
+</head>
+<body>
+<div id="app"></div>
+
+<script type="text/babel">
+    const Header = props => {
+        return (
+            <div className="header">
+                <a href="#">
+                    <img className="logo" src={props.logo} alt="logo"></img>
+                </a>
+                <div>
+                    <h2>{props.siteName}</h2>
+                    <p>{props.slogan}</p>
+                </div>
+            </div>
+        );
+    };
+
+    const Sidebar = props => {
+        return (
+            <div className="sidebar">
+                <h3 className="sidebarTitle">{props.sidebarTitle}</h3>
+                <nav className="mainNav">
+                    <ul>
+                        <li><a href="#">{props.product1}</a></li>
+                        <li><a href="#">{props.product2}</a></li>
+                        <li><a href="#">{props.product3}</a></li>
+                        <li><a href="#">{props.product4}</a></li>
+                        <li><a href="#">{props.product5}</a></li>
+                        <li><a href="#">{props.product6}</a></li>
+                        <li><a href="#">{props.product7}</a></li>
+                    </ul>
+                </nav>
+            </div>
+        );
+    };
+
+    const Content = props => {
+        return (
+            <div className="content">
+                <h1 className="mainTitle">{props.mainTitle}</h1>
+                <div className="mainInfo">
+                    <p className="mainInfoP1">{props.mainInfoP1}</p>
+                    <p className="mainInfoP2">{props.mainInfoP2}</p>
+                    <p className="mainInfoP3">{props.mainInfoP3}</p>
+                    <p className="mainInfoP4">{props.mainInfoP4}</p>
+                </div>
+                <div className="extraInfo">
+                    <div className="contentBox">
+                        <img src={props.contentImg1} alt="#"></img>
+                    </div>
+                    <div className="contentInfo">
+                        <h2>{props.contentTitle}</h2>
+                        <p>{props.contentP1}</p>
+                        <p>{props.contentP2}</p>
+                        <p>{props.contentP3}</p>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    const Footer = props => {
+        return (
+            <div className="footer">
+                <p className="footerInfoP">{props.siteInfo}</p>
+                <p className="footerAuthorP">{props.number}</p>
+            </div>
+        );
+    };
+
+    const app = (
+        <React.Fragment>
+            <Header logo="../images/logo.png" siteName="Добро пожаловать в Добрую пекарню!"
+                    slogan="Аппетитный вкус, безупречный сервис"/>
+            <Sidebar sidebarTitle="Наша продукция:" product1="Хлеб" product2="Торты" product3="Выпечка"
+                     product4="Пироги" product5="Сухари" product6="Пироженные" product7="Печенье"/>
+            <Content
+                mainTitle="Вся продукция в наших пекарнях изготавливается вручную с домашней заботой, теплотой и любовью"
+                mainInfoP1="В наших пекарнях мы начинаем работу ранним утром, чтобы на завтрак вы смогли порадовать себя домашней выпечкой."
+                mainInfoP2="Вся продукция в наших пекарнях приготовлена руками наших пекарей со  старанием и любовью."
+                mainInfoP3="Натуральные ингредиенты, ручная лепка и современные технологии — вот секрет выпечки из нашей пекарни."
+                mainInfoP4="Свежий хлеб, пироги, выпечка, печенье — каждый Гость найдет продукцию, которая подарит истинное наслаждение от качественной и вкусной выпечки."
+                contentImg1="../images/bread.jpeg"
+                contentTitle="Хлеб всему голова"
+                contentP1="Хлеб — популярное блюдо во всем мире. У многих народов с этим продуктом связаны традиции, пословицы, поговорки и даже исторические события, ведь многие войны начинались из-за плодородных земель."
+                contentP2="Кроме того, у разных народов существует свой вид хлеба, но общее одно — он незаменим на любом столе, потому что хлеб — это сытно и полезно."
+                contentP3="Технология производства нашего хлеба и выпечки основана на традициях хлебопечения, проверенных временем. Используемые рецепты позволяют изготовить изделия с отличными вкусовыми качествами без применения красителей, ароматизаторов, усилителей вкуса."/>
+            <Footer siteInfo="Добрая пекарня 2022" number="Номер: +996(555) 55 55 55"/>
+        </React.Fragment>
+    );
+
+    const container = document.getElementById('app');
+    ReactDOM.createRoot(container).render(app);
+</script>
+</body>
+</html>
